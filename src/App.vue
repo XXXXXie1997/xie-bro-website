@@ -3,7 +3,13 @@
     <header>
       <Nav></Nav>
     </header>
-    <div class="mask">施工中{{ pointStr }}</div>
+    <main></main>
+    <div class="mask">施工中(暂时没空){{ pointStr }}</div>
+    <footer>
+      <a href="https://beian.miit.gov.cn/" target="_blank">
+        蒙ICP备2024018901号
+      </a>
+    </footer>
   </div>
 </template>
 
@@ -21,7 +27,7 @@ setInterval(() => {
   width: 100%;
   height: 100%;
   position: relative;
-  background: #333;
+  background: #555;
   .mask {
     position: absolute;
     left: 0;
@@ -35,11 +41,32 @@ setInterval(() => {
     color: #ddd;
     font-weight: bold;
     font-size: 17px;
+    z-index: 100;
   }
   header {
+    height: 48px;
     position: sticky;
     top: 0;
     left: 0;
+    background: #33333333;
+  }
+  main {
+    height: calc(100% - 80px);
+  }
+  footer {
+    height: 32px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #33333333;
+    a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 12px;
+    }
   }
 }
 </style>
