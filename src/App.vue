@@ -1,20 +1,17 @@
 <template>
   <div class="container">
-    <header>
-      <Nav></Nav>
-    </header>
-    <main></main>
-    <div class="mask">施工中(暂时没空){{ pointStr }}</div>
-    <footer>
-      <a href="https://beian.miit.gov.cn/" target="_blank">
-        蒙ICP备2024018901号
-      </a>
-    </footer>
+    <Header></Header>
+    <main>
+      <router-view></router-view>
+    </main>
+    <div class="mask">施工中{{ pointStr }}</div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import Nav from "./components/nav.vue";
+import Header from "./components/header.vue";
+import Footer from "./components/footer.vue";
 import { ref } from "vue";
 const pointStr = ref("");
 setInterval(() => {
@@ -27,7 +24,7 @@ setInterval(() => {
   width: 100%;
   height: 100%;
   position: relative;
-  background: #555;
+  background: #1f1f1f;
   .mask {
     position: absolute;
     left: 0;
@@ -43,30 +40,9 @@ setInterval(() => {
     font-size: 17px;
     z-index: 100;
   }
-  header {
-    height: 48px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    background: #33333333;
-  }
+
   main {
-    height: calc(100% - 80px);
-  }
-  footer {
-    height: 32px;
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #33333333;
-    a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 12px;
-    }
+    height: calc(100% - 64px);
   }
 }
 </style>
