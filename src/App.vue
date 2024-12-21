@@ -2,9 +2,10 @@
   <div class="container">
     <Header></Header>
     <main>
-      <router-view></router-view>
+      <RouterView />
     </main>
-    <div class="mask">施工中{{ pointStr }}</div>
+    <div class="mask">还在施工中{{ pointStr }}</div>
+
     <Footer></Footer>
   </div>
 </template>
@@ -13,6 +14,7 @@
 import Header from "./components/header.vue";
 import Footer from "./components/footer.vue";
 import { ref } from "vue";
+import { RouterView } from "vue-router";
 const pointStr = ref("");
 setInterval(() => {
   pointStr.value = pointStr.value === "..." ? "" : pointStr.value + ".";

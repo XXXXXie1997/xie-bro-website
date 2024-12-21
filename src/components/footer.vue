@@ -20,6 +20,7 @@
   .content {
     height: 100%;
     max-width: 960px;
+    padding: 0 24px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
