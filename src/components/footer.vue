@@ -1,13 +1,16 @@
 <template>
-  <div class="footer">
+  <div class="footer" :style="style">
     <div class="content">
       <div class="right">©2024 · Xie Tianyu</div>
-      <a href="https://beian.miit.gov.cn/" target="_blank">
+      <a :style="style" href="https://beian.miit.gov.cn/" target="_blank">
         蒙ICP备2024018901号
       </a>
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+import { style } from "../hooks/useTheme";
+</script>
 <style lang="less" scoped>
 .footer {
   position: sticky;
@@ -15,7 +18,7 @@
   left: 0;
   height: 32px;
   width: 100%;
-  background: #181818;
+  border-top: 1px solid #ddd;
 
   .content {
     height: 100%;
@@ -27,11 +30,9 @@
     align-items: center;
     gap: 24px;
     .right {
-      color: #ddd;
       font-size: 12px;
     }
     a {
-      color: #ddd;
       text-decoration: none;
       font-size: 12px;
     }

@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container" :style="style">
     <Header></Header>
     <main>
       <RouterView />
     </main>
-    <div class="mask">还在施工中{{ pointStr }}</div>
+    <!-- <div class="mask">还在施工中{{ pointStr }}</div> -->
 
     <Footer></Footer>
   </div>
@@ -15,6 +15,8 @@ import Header from "./components/header.vue";
 import Footer from "./components/footer.vue";
 import { ref } from "vue";
 import { RouterView } from "vue-router";
+import { style } from "./hooks/useTheme";
+
 const pointStr = ref("");
 setInterval(() => {
   pointStr.value = pointStr.value === "..." ? "" : pointStr.value + ".";
@@ -26,7 +28,6 @@ setInterval(() => {
   width: 100%;
   height: 100%;
   position: relative;
-  background: #1f1f1f;
   .mask {
     position: absolute;
     left: 0;
@@ -45,6 +46,7 @@ setInterval(() => {
 
   main {
     height: calc(100% - 64px);
+    overflow-y: scroll;
   }
 }
 </style>

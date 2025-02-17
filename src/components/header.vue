@@ -1,31 +1,76 @@
 <template>
-  <div class="header">
+  <div class="header" :style="style">
     <div class="content">
       <div class="logo">
-        <img src="../assets/logo.svg" alt="" />
+        <img
+          v-if="mainTheme === 'bright'"
+          src="../assets/logo-bright.svg"
+          alt=""
+        />
+        <img v-else src="../assets/logo-dark.svg" alt="" />
         <div class="title">XieBro</div>
       </div>
-      <div class="menu">
-        <RouterLink to="/">首页</RouterLink>
-        <RouterLink to="/about">关于</RouterLink>
+      <div class="menu" :style="style">
+        <RouterLink :style="style" to="/">首页</RouterLink>
+        <RouterLink :style="style" to="/about">关于</RouterLink>
+        <RouterLink :style="style" to="/cv">CV</RouterLink>
       </div>
       <div class="extra">
-        <img src="../assets/github.svg" alt="github" @click="gotoGitHub" />
+        <img
+          v-if="mainTheme === 'bright'"
+          src="../assets/dark.svg"
+          @click="changeTheme"
+        />
+        <img
+          v-if="mainTheme === 'dark'"
+          src="../assets/bright.svg"
+          @click="changeTheme"
+        />
+
+        <img
+          v-if="mainTheme === 'bright'"
+          src="../assets/juejin-bright.svg"
+          alt="github"
+          @click="gotoJuejin"
+        />
+        <img
+          v-if="mainTheme === 'dark'"
+          src="../assets/juejin-dark.svg"
+          alt="github"
+          @click="gotoJuejin"
+        />
+
+        <img
+          v-if="mainTheme === 'bright'"
+          src="../assets/github-bright.svg"
+          alt="github"
+          @click="gotoGitHub"
+        />
+        <img
+          v-if="mainTheme === 'dark'"
+          src="../assets/github-dark.svg"
+          alt="github"
+          @click="gotoGitHub"
+        />
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
+import { mainTheme, style, changeTheme } from "../hooks/useTheme";
 
 function gotoGitHub() {
   window.open("https://github.com/XXXXXie1997");
+}
+function gotoJuejin() {
+  window.open("https://juejin.cn/user/958429872790680");
 }
 </script>
 <style lang="less" scoped>
 .header {
   width: 100%;
-  background: #181818;
+  border-bottom: 1px solid #ddd;
   .content {
     max-width: 960px;
     padding: 0 24px;
@@ -47,7 +92,6 @@ function gotoGitHub() {
         width: 24px;
       }
       .title {
-        color: #ddd;
         font-weight: bold;
       }
     }
@@ -59,7 +103,6 @@ function gotoGitHub() {
       align-items: center;
       gap: 24px;
       a {
-        color: #ccc;
         text-decoration: none;
         font-size: 13px;
         font-weight: bold;
@@ -67,11 +110,26 @@ function gotoGitHub() {
     }
     .extra {
       flex-shrink: 0;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
       img {
         cursor: pointer;
         object-fit: contain;
         height: 24px;
         width: 24px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    .content {
+      padding: 0 8px;
+      .menu {
+        justify-content: space-around;
+        gap: 0;
       }
     }
   }
