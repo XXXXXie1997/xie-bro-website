@@ -32,16 +32,27 @@
             同时基于
             <strong
               :style="mainTheme === 'bright' ? 'color:royalblue' : 'color:#f80'"
-              >Vue2</strong
-            >/<strong
-              :style="mainTheme === 'bright' ? 'color:royalblue' : 'color:#f80'"
-              >Uniapp</strong
             >
-            开发了移动端， 支持PC端大多数功能以及数据看板（基于
+              Vue2
+            </strong>
+            /
             <strong
               :style="mainTheme === 'bright' ? 'color:royalblue' : 'color:#f80'"
-              >ECharts</strong
-            >）
+            >
+              Uniapp
+            </strong>
+            开发了<strong
+              :style="mainTheme === 'bright' ? 'color:royalblue' : 'color:#f80'"
+            >
+              移动端
+            </strong>
+            ， 支持PC端大多数功能以及基于
+            <strong
+              :style="mainTheme === 'bright' ? 'color:royalblue' : 'color:#f80'"
+            >
+              ECharts
+            </strong>
+            的数据看板
           </p>
         </li>
 
@@ -259,14 +270,29 @@ import { style, mainTheme } from "../hooks/useTheme";
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 14px;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  padding: 8px 0;
+  padding: 4px 0;
 }
+
+h1,
+h2,
+h3 {
+  font-size: 18px;
+  padding: 4px 0;
+}
+
+h4,
+h5 {
+  font-size: 16px;
+  padding: 4px 0;
+}
+
 article {
   width: 900px;
   margin: 0 auto;
@@ -275,7 +301,8 @@ article {
 }
 
 p {
-  margin: 0.3em 0;
+  margin: 4px 0;
+  font-size: 14px;
 }
 
 h2 {
