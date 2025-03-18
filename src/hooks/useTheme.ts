@@ -1,15 +1,16 @@
 import { ref, computed } from "vue";
-
-const mainTheme = ref<"dark" | "bright">("bright");
+let theme: string | null = localStorage.getItem("theme");
+const mainTheme = ref<string>(theme || "bright");
 
 const changeTheme = () => {
   mainTheme.value = mainTheme.value === "bright" ? "dark" : "bright";
+  localStorage.setItem("theme", mainTheme.value);
 };
 
 const style = computed(() => {
   return `color: ${
-    mainTheme.value === "bright" ? "#333" : "#fafafa"
-  };background-color: ${mainTheme.value === "bright" ? "#fafafa" : "#333"};`;
+    mainTheme.value === "bright" ? "#333" : "#f5f5f5"
+  };background-color: ${mainTheme.value === "bright" ? "#f5f5f5" : "#333"};`;
 });
 
 export { mainTheme, changeTheme, style };

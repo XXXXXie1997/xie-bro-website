@@ -12,8 +12,7 @@
       </div>
       <div class="menu" :style="style">
         <RouterLink :style="style" to="/">首页</RouterLink>
-        <RouterLink :style="style" to="/about">关于</RouterLink>
-        <RouterLink :style="style" to="/cv">CV</RouterLink>
+        <RouterLink :style="style" to="/cv">简历</RouterLink>
       </div>
       <div class="extra">
         <img
