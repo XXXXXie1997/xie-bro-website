@@ -35,12 +35,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Header from "./components/header.vue";
 import Footer from "./components/footer.vue";
 import { RouterView } from "vue-router";
 import { mainStyle, mainTheme } from "./hooks/useTheme";
-
 import { ref, onMounted } from "vue";
 import anime from "animejs";
 
@@ -67,7 +66,7 @@ const starryNight = () => {
     ],
     easing: "linear",
     loop: true,
-    delay: (el, i) => 50 * i,
+    delay: (_el: any, i: number) => 50 * i,
   });
 };
 
@@ -76,7 +75,7 @@ const shootingStars = () => {
     targets: "#shootingstars .wish",
     easing: "linear",
     loop: true,
-    delay: (el, i) => 1000 * i,
+    delay: (_el: any, i: number) => 1000 * i,
     opacity: [{ duration: 700, value: "1" }],
     width: [{ value: "150px" }, { value: "0px" }],
     translateX: 350,

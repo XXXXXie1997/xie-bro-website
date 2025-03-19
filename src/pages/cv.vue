@@ -290,7 +290,7 @@
   </article>
 </template>
 <script lang="ts" setup>
-import { style, mainTheme } from "../hooks/useTheme";
+import { mainTheme } from "../hooks/useTheme";
 </script>
 <style scoped>
 * {
