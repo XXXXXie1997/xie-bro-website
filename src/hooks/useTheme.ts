@@ -1,6 +1,6 @@
 import { ref, computed } from "vue";
 let theme: string | null = localStorage.getItem("theme");
-const mainTheme = ref<string>(theme || "bright");
+const mainTheme = ref<string>(theme || "dark");
 
 const changeTheme = () => {
   mainTheme.value = mainTheme.value === "bright" ? "dark" : "bright";
