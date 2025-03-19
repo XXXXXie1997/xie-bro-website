@@ -10,7 +10,7 @@
         <img v-else src="../assets/logo-dark.svg" alt="" />
         <div class="title">XieBro</div>
       </div>
-      <div class="menu" :style="style">
+      <div class="menu">
         <RouterLink :style="style" to="/">首页</RouterLink>
         <RouterLink :style="style" to="/cv">简历</RouterLink>
       </div>
@@ -70,16 +70,20 @@ function gotoJuejin() {
 .header {
   width: 100%;
   border-bottom: 1px solid #ddd;
+  height: 40px;
+
   .content {
+    height: 100%;
     max-width: 960px;
     padding: 0 24px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
+
     .logo {
       user-select: none;
-      height: 36px;
+      height: 100%;
       width: 100px;
       display: flex;
       justify-content: center;
@@ -97,10 +101,13 @@ function gotoJuejin() {
     .menu {
       flex-shrink: 1;
       width: 100%;
+      height: 100%;
+
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 24px;
+      z-index: 10;
       a {
         text-decoration: none;
         font-size: 13px;
@@ -110,9 +117,12 @@ function gotoJuejin() {
     .extra {
       flex-shrink: 0;
       display: flex;
+      height: 100%;
       gap: 16px;
       justify-content: center;
       align-items: center;
+      z-index: 10;
+
       img {
         cursor: pointer;
         object-fit: contain;

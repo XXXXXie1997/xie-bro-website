@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :style="style">
+  <div class="container">
     <strong class="hello">{{ `${curTime}好，我小谢 🙋` }}</strong>
     <div>首页的内容、样式和排版还在设计中，还请不要嫌弃🙇</div>
     <br />
@@ -27,8 +27,6 @@
 </template>
 <script lang="ts" setup>
 import { computed } from "vue";
-import { style } from "../hooks/useTheme";
-
 const curTime = computed(() => {
   if (new Date().getHours() > 6 && new Date().getHours() < 9) {
     return "早上";

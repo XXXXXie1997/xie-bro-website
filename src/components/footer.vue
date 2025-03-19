@@ -19,6 +19,7 @@ import { style } from "../hooks/useTheme";
   height: 32px;
   width: 100%;
   border-top: 1px solid #ddd;
+  z-index: 10;
 
   .content {
     height: 100%;
@@ -29,6 +30,7 @@ import { style } from "../hooks/useTheme";
     justify-content: center;
     align-items: center;
     gap: 24px;
+
     .right {
       font-size: 12px;
     }

@@ -8,9 +8,17 @@ const changeTheme = () => {
 };
 
 const style = computed(() => {
-  return `color: ${
-    mainTheme.value === "bright" ? "#333" : "#f5f5f5"
-  };background-color: ${mainTheme.value === "bright" ? "#f5f5f5" : "#333"};`;
+  return `color: ${mainTheme.value === "bright" ? "#333" : "#f5f5f5"};`;
 });
 
-export { mainTheme, changeTheme, style };
+const mainStyle = computed(() => {
+  return `color: ${
+    mainTheme.value === "bright" ? "#333" : "#f5f5f5"
+  };background: ${
+    mainTheme.value === "bright"
+      ? "#f5f5f5"
+      : "linear-gradient(135deg, #0f2027 0%, #17333f 100%)"
+  };`;
+});
+
+export { mainTheme, changeTheme, style, mainStyle };

@@ -1,6 +1,6 @@
 <template>
-  <article class="container" :style="style">
-    <section class="bio" :style="style">
+  <article class="container">
+    <section class="bio">
       <div class="left">
         <div>谢某</div>
         <p>男 | 1997 | 内蒙古巴彦淖尔</p>
@@ -301,6 +301,7 @@ import { style, mainTheme } from "../hooks/useTheme";
   line-height: 1.5em;
 }
 .container {
+  width: 100%;
   max-width: 960px;
   position: relative;
 }
@@ -366,10 +367,7 @@ h4 {
 }
 
 .bio {
-  position: fixed;
   display: flex;
-  width: calc(100% - 80px);
-  max-width: 880px;
   height: 130px;
   justify-content: space-between;
   align-items: center;
@@ -412,9 +410,7 @@ h4 {
   display: flex;
   justify-content: space-between;
 }
-.skills {
-  padding-top: 140px;
-}
+
 @media (max-width: 500px) {
   body {
     margin: 0;
