@@ -13,6 +13,7 @@
       <div class="menu">
         <RouterLink :style="style" to="/">首页</RouterLink>
         <RouterLink :style="style" to="/cv">简历</RouterLink>
+        <RouterLink :style="style" to="/game2048">来一局2048</RouterLink>
       </div>
       <div class="extra">
         <img
