@@ -8,7 +8,7 @@
         <p>QQ：1416849251 | WeChat：xty1416849251</p>
       </div>
       <div class="right">
-        <img src="./images/photo.jpg" alt="" width="100" />
+        <img src="../assets/photo.jpg" alt="" width="100" />
       </div>
     </section>
     <section class="skills">
